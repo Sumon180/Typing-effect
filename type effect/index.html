@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text type effect</title>
+    <style>
+        body{
+            background-color: violet;
+        }
+        h1{
+            margin-top:12rem ;
+            text-align: center;
+        }
+        h1::after{
+            border-right: 2px solid white;
+            content: '';
+            position: relative;
+            left: 5px;
+            animation: blink 0.6s infinite;
+
+        }
+        @keyframes blink{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h1></h1>
+
+    <script>
+
+        let title = document.querySelector("h1");
+        let text = "Sumon Hossain! Web desgin & Developer";
+        let index = 0;
+
+        setInterval(() => {
+            if(index > text.length){
+                index = 0;
+            }
+            title.innerHTML = text.slice(0,index++);
+        },100)
+
+    </script>
+    
+</body>
+</html>
